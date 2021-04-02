@@ -265,6 +265,7 @@ pub use self::buffered::WriterPanicked;
 pub(crate) use self::stdio::attempt_print_to_stderr;
 #[unstable(feature = "internal_output_capture", issue = "none")]
 #[doc(no_inline, hidden)]
+#[cfg(not(target_arch = "bpf"))]
 pub use self::stdio::set_output_capture;
 #[unstable(feature = "is_terminal", issue = "98070")]
 pub use self::stdio::IsTerminal;
