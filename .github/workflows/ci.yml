@@ -57,6 +57,9 @@ jobs:
             tidy: false
             os: ubuntu-20.04
             env: {}
+          - name: bpfel-unknown-unknown
+            os: ubuntu-latest
+            env: {}
           - name: x86_64-gnu-tools
             tidy: false
             env:
