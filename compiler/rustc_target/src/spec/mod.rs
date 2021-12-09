@@ -77,6 +77,7 @@ mod netbsd_base;
 mod nto_qnx_base;
 mod openbsd_base;
 mod redox_base;
+mod sbf_base;
 mod solaris_base;
 mod solid_base;
 mod thumb_base;
@@ -1241,6 +1242,7 @@ supported_targets! {
     ("bpfeb-unknown-none", bpfeb_unknown_none),
     ("bpfel-unknown-none", bpfel_unknown_none),
     ("bpfel-unknown-unknown", bpfel_unknown_unknown),
+    ("sbf-solana-solana", sbf_solana_solana),
 
     ("armv6k-nintendo-3ds", armv6k_nintendo_3ds),
 
