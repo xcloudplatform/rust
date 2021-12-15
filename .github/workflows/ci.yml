@@ -59,7 +59,7 @@ jobs:
             tidy: false
             os: ubuntu-20.04
             env: {}
-          - name: bpfel-unknown-unknown
+          - name: sbf-solana-solana
             os: ubuntu-latest
             env: {}
           - name: x86_64-gnu-tools
@@ -182,7 +182,7 @@ jobs:
           - name: x86_64-gnu-llvm-10
             os: ubuntu-latest
             env: {}
-          - name: bpfel-unknown-unknown
+          - name: sbf-solana-solana
             os: ubuntu-latest
             env: {}
     timeout-minutes: 600

@@ -305,7 +305,7 @@ jobs:
             <<: *job-linux-xl
             tidy: false
 
-          - name: bpfel-unknown-unknown
+          - name: sbf-solana-solana
             <<: *job-linux-xl
 
           - name: x86_64-gnu-tools
@@ -328,7 +328,7 @@ jobs:
           - name: x86_64-gnu-llvm-10
             <<: *job-linux-xl
 
-          - name: bpfel-unknown-unknown
+          - name: sbf-solana-solana
             <<: *job-linux-xl
 
   auto:
