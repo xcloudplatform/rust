@@ -4,14 +4,23 @@ version = 3
 
 [[package]]
 name = "addr2line"
+version = "0.16.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "3e61f2b7f93d2c7d2b08263acaa4a363b3e276806c68af6134c44f523bf1aacd"
+dependencies = [
+ "compiler_builtins",
+ "gimli 0.25.0",
+ "rustc-std-workspace-alloc",
+ "rustc-std-workspace-core",
+]
+
+[[package]]
+name = "addr2line"
 version = "0.17.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "b9ecd88a8c8378ca913a680cd98f0f13ac67383d35993f86c90a70e3f137816b"
 dependencies = [
- "compiler_builtins",
- "gimli",
- "rustc-std-workspace-alloc",
- "rustc-std-workspace-core",
+ "gimli 0.26.2",
 ]
 
 [[package]]
@@ -30,7 +39,7 @@ version = "0.7.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "43bb833f0bf979d8475d38fbf09ed3b8a55e1885fe93ad3f93239fc6a4f17b98"
 dependencies = [
- "getrandom",
+ "getrandom 0.2.8",
  "once_cell",
  "version_check",
 ]
@@ -199,7 +208,7 @@ version = "0.3.66"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "cab84319d616cfb654d03394f38ab7e6f0919e181b1b57e1fd15e7fb4077d9a7"
 dependencies = [
- "addr2line",
+ "addr2line 0.17.0",
  "cc",
  "cfg-if",
  "libc",
@@ -875,8 +884,9 @@ dependencies = [
 
 [[package]]
 name = "compiler_builtins"
-version = "0.1.85"
-source = "git+https://github.com/solana-labs/compiler-builtins?tag=sbf-tools-v1.31#baa55b41a68bef73ffd089e16669e793d2f5e767"
+version = "0.1.89"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "9fc9c2080d347a2c316518840ac9194644a9993dfa1e9778ef38979a339f5d8b"
 dependencies = [
  "cc",
  "rustc-std-workspace-core",
@@ -971,8 +981,8 @@ checksum = "6245d59a3e82a7fc217c5828a6692dbc6dfb63a0c8c90495621f7b9d79704a0e"
 name = "core"
 version = "0.0.0"
 dependencies = [
- "getrandom 0.1.14",
- "rand 0.7.3",
+ "getrandom 0.1.16",
+ "rand",
  "rand_xorshift",
 ]
 
@@ -1335,7 +1345,7 @@ version = "2.0.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "6a3d382e8464107391c8706b4c14b087808ecb909f6c15c34114bc42e53a9e4c"
 dependencies = [
- "getrandom",
+ "getrandom 0.2.8",
 ]
 
 [[package]]
@@ -1772,6 +1782,17 @@ dependencies = [
 
 [[package]]
 name = "getrandom"
+version = "0.1.16"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "8fc3cb4d91f53b50155bdcfd23f6a4c39ae1969c2ae85982b135750cccaf5fce"
+dependencies = [
+ "cfg-if",
+ "libc",
+ "wasi 0.9.0+wasi-snapshot-preview1",
+]
+
+[[package]]
+name = "getrandom"
 version = "0.2.8"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "c05aeb6a22b8f62540c194aac980f2115af067bfe15a0734d7277a768d396b31"
@@ -1779,8 +1800,19 @@ dependencies = [
  "cfg-if",
  "js-sys",
  "libc",
- "wasi",
+ "wasi 0.11.0+wasi-snapshot-preview1",
  "wasm-bindgen",
+]
+
+[[package]]
+name = "gimli"
+version = "0.25.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "f0a01e0497841a3b2db4f8afa483cce65f7e96a3498bd6c541734792aeac8fe7"
+dependencies = [
+ "compiler_builtins",
+ "rustc-std-workspace-alloc",
+ "rustc-std-workspace-core",
 ]
 
 [[package]]
@@ -1789,11 +1821,8 @@ version = "0.26.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "22030e2c5a68ec659fde1e949a745124b48e6fa8b045b7ed5bd1fe4ccc5c4e5d"
 dependencies = [
- "compiler_builtins",
  "fallible-iterator",
  "indexmap",
- "rustc-std-workspace-alloc",
- "rustc-std-workspace-core",
  "stable_deref_trait",
 ]
 
@@ -2685,7 +2714,7 @@ version = "0.1.0"
 dependencies = [
  "colored",
  "env_logger 0.9.0",
- "getrandom",
+ "getrandom 0.2.8",
  "lazy_static",
  "libc",
  "libffi",
@@ -3004,7 +3033,7 @@ checksum = "ed20c4c21d893414f42e0cbfebe8a8036b5ae9b0264611fb6504e395eda6ceec"
 dependencies = [
  "ct-codecs",
  "ed25519-compact",
- "getrandom",
+ "getrandom 0.2.8",
  "orion",
  "p384",
  "rand_core",
@@ -3359,7 +3388,7 @@ version = "0.6.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "ec0be4795e2f6a28069bec0b5ff3e2ac9bafc99e6a9a7dc3547996c5c816922c"
 dependencies = [
- "getrandom",
+ "getrandom 0.2.8",
 ]
 
 [[package]]
@@ -3419,7 +3448,7 @@ version = "0.4.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "528532f3d801c87aec9def2add9ca802fe569e44a544afe633765267840abe64"
 dependencies = [
- "getrandom",
+ "getrandom 0.2.8",
  "redox_syscall",
 ]
 
@@ -3633,7 +3662,7 @@ version = "1.0.0"
 dependencies = [
  "bstr 0.2.17",
  "clap 3.2.20",
- "getrandom",
+ "getrandom 0.2.8",
  "libc",
  "libz-sys",
  "rand",
@@ -5325,7 +5354,7 @@ checksum = "a2eb9349b6444b326872e140eb1cf5e7c522154d69e7a0ffb0fb81c06b37543f"
 name = "std"
 version = "0.0.0"
 dependencies = [
- "addr2line",
+ "addr2line 0.16.0",
  "alloc",
  "cfg-if",
  "compiler_builtins",
@@ -5345,7 +5374,7 @@ dependencies = [
  "rustc-demangle",
  "std_detect",
  "unwind",
- "wasi",
+ "wasi 0.11.0+wasi-snapshot-preview1",
 ]
 
 [[package]]
@@ -5589,7 +5618,7 @@ version = "0.4.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "da8fbf660a019b6bf11ea95762041464aa9099cc293b6a66d77cea5107619671"
 dependencies = [
- "gimli",
+ "gimli 0.26.2",
  "hashbrown 0.12.3",
  "object 0.30.1",
  "tracing",
@@ -6111,7 +6140,7 @@ version = "0.8.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "bc5cf98d8186244414c848017f0e2676b3fcb46807f6668a97dfe67359a3c4b7"
 dependencies = [
- "getrandom",
+ "getrandom 0.2.8",
 ]
 
 [[package]]
@@ -6151,6 +6180,12 @@ dependencies = [
  "winapi",
  "winapi-util",
 ]
+
+[[package]]
+name = "wasi"
+version = "0.9.0+wasi-snapshot-preview1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "cccddf32554fecc6acb585f82a32a72e28b48f8c4c1883ddfeeeaa96f7d8e519"
 
 [[package]]
 name = "wasi"
@@ -6464,5 +6499,5 @@ dependencies = [
 
 [[patch.unused]]
 name = "compiler_builtins"
-version = "0.1.76"
-source = "git+https://github.com/solana-labs/compiler-builtins#2044d7e16a99d951853ce362e384027dec4c5b92"
+version = "0.1.84"
+source = "git+https://github.com/solana-labs/compiler-builtins?tag=sbf-tools-v1.31#baa55b41a68bef73ffd089e16669e793d2f5e767"
