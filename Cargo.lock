@@ -6495,8 +6495,3 @@ dependencies = [
  "syn",
  "synstructure",
 ]
-
-[[patch.unused]]
-name = "compiler_builtins"
-version = "0.1.84"
-source = "git+https://github.com/solana-labs/compiler-builtins?tag=sbf-tools-v1.31#baa55b41a68bef73ffd089e16669e793d2f5e767"
