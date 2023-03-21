@@ -50,17 +50,18 @@ jobs:
         include:
           - name: mingw-check
             tidy: false
-            os: ubuntu-20.04
+            os: ubuntu-latest
             env: {}
           - name: mingw-check-tidy
             tidy: true
-            os: ubuntu-20.04
+            os: ubuntu-latest
             env: {}
           - name: x86_64-gnu-llvm-13
             tidy: false
-            os: ubuntu-20.04
+            os: ubuntu-latest
             env: {}
           - name: sbf-solana-solana
+            tidy: false
             os: ubuntu-latest
             env: {}
           - name: x86_64-gnu-tools
@@ -226,6 +227,9 @@ jobs:
         if: success() && !env.SKIP_JOB
       - name: install sccache
         run: src/ci/scripts/install-sccache.sh
+        if: success() && !env.SKIP_JOB
+      - name: select Xcode
+        run: src/ci/scripts/select-xcode.sh
         if: success() && !env.SKIP_JOB
       - name: install clang
         run: src/ci/scripts/install-clang.sh

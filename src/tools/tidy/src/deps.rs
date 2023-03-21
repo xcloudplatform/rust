@@ -86,7 +86,6 @@ const RUNTIME_CRATES: &[&str] = &["std", "core", "alloc", "test", "panic_abort",
 /// This list is here to provide a speed-bump to adding a new dependency to
 /// rustc. Please check with the compiler team before adding an entry.
 const PERMITTED_RUSTC_DEPENDENCIES: &[&str] = &[
-    "addr2line",
     "adler",
     "ahash",
     "aho-corasick",

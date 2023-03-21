@@ -177,6 +177,7 @@ pub use self::lazy_lock::LazyLock;
 #[unstable(feature = "once_cell", issue = "74465")]
 pub use self::once_lock::OnceLock;
 
+#[cfg(not(target_family = "solana"))]
 pub(crate) use self::remutex::{ReentrantMutex, ReentrantMutexGuard};
 
 pub mod mpsc;

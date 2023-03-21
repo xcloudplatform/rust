@@ -23,7 +23,7 @@ RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 
 RUN PATH="${HOME}/.cargo/bin:${PATH}" \
     cargo install --git https://github.com/solana-labs/cargo-run-solana-tests.git \
-    --rev 16dc21fbc9d7bfe21d9f82621d71d7d3db3e0e78 \
+    --rev 12186c99173cc30771897932159b53acca836321 \
     --bin cargo-run-solana-tests --root /usr/local
 
 COPY scripts/sccache.sh /scripts/
